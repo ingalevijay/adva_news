@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Search, SearchResults
 
-# Register your models here.
+
+admin.site.register(Search)
+admin.site.register(SearchResults)
+
