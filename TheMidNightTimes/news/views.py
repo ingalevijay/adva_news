@@ -82,12 +82,13 @@ class SearchResult(View):
         data = serializers.serialize('json', search_result)
         return HttpResponse(data, content_type='application/json')
 
-
-class RefreshSearchResul(View):
-    def get(self, request, search_id):
-        search = Search.objects.filter(search_id=search_id)
-        if search:
-            last_update_date = search.created_at
-            trigger_date = datetime.now() - timedelta(hours=24)
-
+# TO DO need to implement Refresh method for fetch newly uploaded articles which runs once in day.
+#
+# class RefreshSearchResul(View):
+#     def get(self, request, search_id):
+#         search = Search.objects.filter(search_id=search_id)
+#         if search:
+#             last_update_date = search.created_at
+#             trigger_date = datetime.now() - timedelta(hours=24)
+#
 
